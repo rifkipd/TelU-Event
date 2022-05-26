@@ -7,6 +7,8 @@
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/drawable/splashlogo.xml" value="0.2185" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_main.xml" value="0.12192118226600986" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_splash_screen.xml" value="0.22" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_sign_up.xml" value="0.1" />
       </map>
     </option>
   </component>
