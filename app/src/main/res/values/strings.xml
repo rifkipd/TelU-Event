@@ -12,4 +12,11 @@
     <string name="btnSignin_signup">Sign up</string>
     <string name="or_text">OR</string>
     <string name="belum_text">Jika belum memiliki akun!</string>
+    <string name="email_empty">Email tidak boleh kosong</string>
+    <string name="email_invalid">Email tidak valid</string>
+    <string name="password_empty">Password tidak boleh kosong</string>
+    <string name="password_invalid">Password tidak valid</string>
+    <string name="password_less">Password minimal 6 huruf</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
