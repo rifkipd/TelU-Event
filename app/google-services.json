@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "167731115058",
+    "project_id": "telu-eventapps",
+    "storage_bucket": "telu-eventapps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167731115058:android:94920263ef273ed799f82b",
+        "android_client_info": {
+          "package_name": "com.tryhard.teluevent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167731115058-cpc6nu4u4fhngkn67lcriv3pelltij6r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEpk-eKaYxjYkhKk-vSMnCdt8KuoFO8hI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "167731115058-cpc6nu4u4fhngkn67lcriv3pelltij6r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167731115058:android:4a20b3d92a4ef4d899f82b",
+        "android_client_info": {
+          "package_name": "org.tryhard.teluevent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167731115058-cpc6nu4u4fhngkn67lcriv3pelltij6r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEpk-eKaYxjYkhKk-vSMnCdt8KuoFO8hI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "167731115058-cpc6nu4u4fhngkn67lcriv3pelltij6r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
