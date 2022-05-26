@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">TeluEvent</string>
+    <string name="text_telkom">Telkom University</string>
+    <string name="text_telkom2">Event Apps</string>
+    <string name="version_text">Version 1.0</string>
 </resources>
