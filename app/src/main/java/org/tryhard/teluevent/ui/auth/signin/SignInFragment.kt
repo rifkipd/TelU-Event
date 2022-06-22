@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
+import org.tryhard.teluevent.MainActivity
 import org.tryhard.teluevent.R
 import org.tryhard.teluevent.databinding.FragmentSignInBinding
 import org.tryhard.teluevent.ui.home.HomeActivity
@@ -78,8 +79,12 @@ class SignInFragment : Fragment() {
             .addOnCompleteListener { (this)
                 if (it.isSuccessful){
                     Toast.makeText(getContext(), "$email Berhasil Sign In", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(getContext(),HomeActivity::class.java)
-                    startActivity(intent)
+//                    val intent = Intent(getContext(),HomeActivity::class.java)
+//                    startActivity(intent)
+                    val home = Intent(activity,MainActivity::class.java)
+                    startActivity(home)
+                    activity?.finish()
+
 
                 }else{
                     Toast.makeText(getContext(), "${it.exception?.message}", Toast.LENGTH_SHORT).show()

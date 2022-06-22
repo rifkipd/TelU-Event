@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.home.HomePageFragment">
+    tools:context=".ui.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -74,7 +74,7 @@
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:layout_marginStart="60dp"
-            android:background="@drawable/schedule"
+            android:background="@drawable/timelogo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imgbtn_create"
             app:layout_constraintTop_toTopOf="@+id/divider2"
