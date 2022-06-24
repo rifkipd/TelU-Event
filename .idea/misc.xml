@@ -17,12 +17,15 @@
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_main2.xml" value="0.2616995073891626" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_splash_screen.xml" value="0.22" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_dashboard.xml" value="0.2616995073891626" />
-        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_home_page.xml" value="0.18" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_home_terbaru.xml" value="0.25" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_home_vertical.xml" value="0.25769704433497537" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_notifications.xml" value="0.2616995073891626" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_sign_up.xml" value="0.27328556806550663" />
-        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/item_home_vertical.xml" value="0.18" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/item_home_horizontal.xml" value="0.25769704433497537" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/item_home_vertical.xml" value="0.25" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/menu/bottom_nav_menu.xml" value="0.290234375" />
       </map>
     </option>

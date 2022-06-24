@@ -4,17 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.tryhard.teluevent.R
-import org.tryhard.teluevent.databinding.FragmentHomeBinding
 import org.tryhard.teluevent.model.dummy.HomeModel
+
 
 class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
 
@@ -26,6 +24,8 @@ class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
         return inflater.inflate(R.layout.fragment_home,container,false)
 
     }
@@ -36,9 +36,15 @@ class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
         initDataDummy()
 
         var adapter = HomeAdapter(eventList,this)
-        var layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
-        rcList.layoutManager = layoutManager
-        rcList.adapter = adapter
+        var layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        bigRcList.layoutManager = layoutManager
+        bigRcList.adapter = adapter
+
+        val sectionPagerAdapter = SectionPagerAdapter(
+            childFragmentManager
+        )
+        viewPager.adapter = sectionPagerAdapter
+        tabLayout.setupWithViewPager(viewPager)
 
     }
 
@@ -57,4 +63,7 @@ class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
     override fun onClick(v: View, data: HomeModel) {
         Toast.makeText(context,"Percobaan klik item "+ data.title, Toast.LENGTH_SHORT).show()
     }
+
+
+
 }

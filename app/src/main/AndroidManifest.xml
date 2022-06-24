@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeluEvent.noActionBar">
 
-        <activity
-            android:name=".ui.home.HomeActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".ui.home."-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".ui.auth.AuthActivity"
             android:exported="false" />
