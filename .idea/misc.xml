@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/font/poppins.xml" value="0.2875" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_detail.xml" value="0.2641625615763547" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_home_terbaru.xml" value="0.2641625615763547" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_profile.xml" value="0.2641625615763547" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_profile_account.xml" value="0.2641625615763547" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_schedule.xml" value="0.2641625615763547" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_sign_in.xml" value="0.2641625615763547" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_sign_up.xml" value="0.151171875" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/item_home_horizontal.xml" value="0.25" />
