@@ -1,5 +1,6 @@
 package org.tryhard.teluevent.ui.home.terbaru
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import kotlinx.android.synthetic.main.fragment_home_terbaru.*
 import org.tryhard.teluevent.R
 import org.tryhard.teluevent.model.dummy.HomeModel
 import org.tryhard.teluevent.model.dummy.HomeVerticalModel
+import org.tryhard.teluevent.ui.detail.DetailActivity
 import org.tryhard.teluevent.ui.home.HomeAdapter
 import org.tryhard.teluevent.ui.home.SectionPagerAdapter
 
@@ -43,7 +45,9 @@ class HomeTerbaruFragment : Fragment(),HomeNewAdapter.ItemAdapterCallback {
     }
 
     override fun onClick(v: View, data: HomeVerticalModel) {
-        Toast.makeText(context,"Percobaan klik item "+ data.title,Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context,"Percobaan klik item "+ data.title,Toast.LENGTH_SHORT).show()
+        val detail = Intent(activity,DetailActivity::class.java)
+        startActivity(detail)
     }
 
 
