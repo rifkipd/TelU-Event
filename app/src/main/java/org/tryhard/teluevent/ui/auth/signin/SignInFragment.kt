@@ -14,7 +14,6 @@ import com.google.firebase.auth.FirebaseAuth
 import org.tryhard.teluevent.MainActivity
 import org.tryhard.teluevent.R
 import org.tryhard.teluevent.databinding.FragmentSignInBinding
-import org.tryhard.teluevent.ui.home.HomeActivity
 
 class SignInFragment : Fragment() {
 
