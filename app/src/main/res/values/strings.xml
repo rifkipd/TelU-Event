@@ -4,7 +4,8 @@
     <string name="text_telkom2">Event Apps</string>
     <string name="version_text">Version 1.0</string>
     <string name="signup_text">Signup Account</string>
-    <string name="username_text">Username</string>
+    <string name="fullname_text">Full Name</string>
+    <string name="username_text">Email</string>
     <string name="password_text">Password</string>
     <string name="btnSignup">Sign up</string>
     <string name="signin_text">Sigin Account</string>

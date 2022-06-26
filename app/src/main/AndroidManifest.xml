@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.tryhard.teluevent">
+    package="org.tryhard.teluevent" >
 
     <application
         android:allowBackup="true"
@@ -8,11 +8,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TeluEvent.noActionBar">
+        android:theme="@style/Theme.TeluEvent.noActionBar" >
+        <activity
+            android:name=".ui.auth.admin.AdminActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.detail.DetailActivity"
-            android:exported="false" />
-        <!-- <activity -->
+            android:exported="false" /> <!-- <activity -->
         <!-- android:name=".ui.home." -->
         <!-- android:exported="false" /> -->
         <activity
@@ -20,7 +22,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.splashscreen.SplashScreenActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
