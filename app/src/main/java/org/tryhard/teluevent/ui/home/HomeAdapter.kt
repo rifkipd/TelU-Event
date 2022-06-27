@@ -36,7 +36,7 @@ class HomeAdapter(
             itemView.apply {
                 tvBigTitle.text = data.title
                 Glide.with(context)
-                    .load(R.drawable.samplebanner)
+                    .load(R.drawable.banner1)
                     .into(ivBigBanner)
 
                 itemView.setOnClickListener{itemAdapterCallback.onClick(it,data)}

@@ -50,9 +50,10 @@ class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
 
     fun initDataDummy(){
         eventList = ArrayList()
-        eventList.add(HomeModel("Event Music",""))
+        eventList.add(HomeModel("Event Music We The Fest",""))
         eventList.add(HomeModel("Event Seni",""))
         eventList.add(HomeModel("Event Esport",""))
+        eventList.add(HomeModel("Perkumpulan Pecinta Alam ",""))
     }
 
 //    override fun onDestroyView() {

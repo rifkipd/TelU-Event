@@ -82,13 +82,15 @@
             android:layout_marginTop="11dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/username_hint">
+            app:layout_constraintTop_toBottomOf="@+id/username_hint"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_inp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/password_text"
+                android:inputType="textPassword"
                 tools:ignore="TouchTargetSizeCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>

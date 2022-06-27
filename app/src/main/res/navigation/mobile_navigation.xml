@@ -15,7 +15,7 @@
         android:id="@+id/navigation_schedule"
         android:name="org.tryhard.teluevent.ui.schedule.ScheduleFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_schedule" />
 
     <fragment
         android:id="@+id/navigation_profile"
