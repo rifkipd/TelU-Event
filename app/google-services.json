@@ -1,62 +1,34 @@
 {
   "project_info": {
-    "project_number": "167731115058",
-    "project_id": "telu-eventapps",
-    "storage_bucket": "telu-eventapps.appspot.com"
+    "project_number": "400230379828",
+    "firebase_url": "https://telu-event-ce438-default-rtdb.firebaseio.com",
+    "project_id": "telu-event-ce438",
+    "storage_bucket": "telu-event-ce438.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:167731115058:android:94920263ef273ed799f82b",
-        "android_client_info": {
-          "package_name": "com.tryhard.teluevent"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "167731115058-cpc6nu4u4fhngkn67lcriv3pelltij6r.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCEpk-eKaYxjYkhKk-vSMnCdt8KuoFO8hI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "167731115058-cpc6nu4u4fhngkn67lcriv3pelltij6r.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:167731115058:android:4a20b3d92a4ef4d899f82b",
+        "mobilesdk_app_id": "1:400230379828:android:d9a89cf0b7b1be1c17b561",
         "android_client_info": {
           "package_name": "org.tryhard.teluevent"
         }
       },
       "oauth_client": [
         {
-          "client_id": "167731115058-cpc6nu4u4fhngkn67lcriv3pelltij6r.apps.googleusercontent.com",
+          "client_id": "400230379828-aglcfbe0cud1j06s1u88tgjrk6vqdpjk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCEpk-eKaYxjYkhKk-vSMnCdt8KuoFO8hI"
+          "current_key": "AIzaSyCcfJKLJ-YKUDYhOlO1c4wwRoP9LrQY1dI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "167731115058-cpc6nu4u4fhngkn67lcriv3pelltij6r.apps.googleusercontent.com",
+              "client_id": "400230379828-aglcfbe0cud1j06s1u88tgjrk6vqdpjk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

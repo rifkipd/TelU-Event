@@ -3,45 +3,43 @@ package org.tryhard.teluevent.ui.home
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_home_horizontal.view.*
 import org.tryhard.teluevent.R
 import org.tryhard.teluevent.model.dummy.HomeModel
+import org.tryhard.teluevent.model.event.Event
+
+
+class HomeAdapter(private val eventList:ArrayList<Event>) : RecyclerView.Adapter<HomeAdapter.MyViewHolder>(){
 
 
 
-class HomeAdapter(
-    private val listData: List<HomeModel>,
-    private val itemAdapterCallback: ItemAdapterCallback,
-) :RecyclerView.Adapter<HomeAdapter.ViewHolder>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeAdapter.ViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        val view = layoutInflater.inflate(R.layout.item_home_horizontal,parent,false)
-        return ViewHolder(view)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_home_horizontal,parent,false)
+
+        return MyViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: HomeAdapter.ViewHolder, position: Int) {
-        holder.bind(listData[position], itemAdapterCallback)
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        val currentItem = eventList[position]
+
+
+        holder.tvTitle.text = currentItem.title
     }
-
-
 
     override fun getItemCount(): Int {
-        return listData.size
+        val limit:Int = 5
+        return eventList.size.coerceAtMost(limit)
     }
 
-    class ViewHolder(itemView:View): RecyclerView.ViewHolder(itemView) {
-        fun bind(data:HomeModel,itemAdapterCallback: ItemAdapterCallback){
-            itemView.apply {
-                tvBigTitle.text = data.title
-                Glide.with(context)
-                    .load(R.drawable.banner1)
-                    .into(ivBigBanner)
 
-                itemView.setOnClickListener{itemAdapterCallback.onClick(it,data)}
-            }
-        }
+
+    class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+        val tvTitle: TextView = itemView.findViewById(R.id.tvBigTitle)
+
     }
 
     interface ItemAdapterCallback{

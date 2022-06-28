@@ -5,18 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.tryhard.teluevent.R
+import org.tryhard.teluevent.databinding.FragmentHomeBinding
 import org.tryhard.teluevent.model.dummy.HomeModel
+import org.tryhard.teluevent.model.event.Event
 
 
-class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
+class HomeFragment : Fragment() {
 
-    private var eventList : ArrayList<HomeModel> = ArrayList()
+   private lateinit var dbRef: DatabaseReference
+   private lateinit var eventRecyclerView: RecyclerView
+   private lateinit var  eventArrayList: ArrayList<Event>
+
+
 
 
     override fun onCreateView(
@@ -26,19 +32,20 @@ class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
     ): View? {
 
 
+
         return inflater.inflate(R.layout.fragment_home,container,false)
 
     }
 
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        initDataDummy()
 
-        var adapter = HomeAdapter(eventList,this)
-        var layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        bigRcList.layoutManager = layoutManager
-        bigRcList.adapter = adapter
+        eventRecyclerView = bigRcList
+        eventRecyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        eventRecyclerView.setHasFixedSize(true)
+
+        eventArrayList = arrayListOf<Event>()
+        getEventData()
 
         val sectionPagerAdapter = SectionPagerAdapter(
             childFragmentManager
@@ -48,23 +55,28 @@ class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
 
     }
 
-    fun initDataDummy(){
-        eventList = ArrayList()
-        eventList.add(HomeModel("Event Music We The Fest",""))
-        eventList.add(HomeModel("Event Seni",""))
-        eventList.add(HomeModel("Event Esport",""))
-        eventList.add(HomeModel("Perkumpulan Pecinta Alam ",""))
+    private fun getEventData() {
+        dbRef = FirebaseDatabase.getInstance().getReference("Event")
+
+        dbRef.addValueEventListener(object: ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    for (eventSnapshot in snapshot.children){
+                        val event = eventSnapshot.getValue(Event::class.java)
+                        eventArrayList.add(event!!)
+                    }
+
+                    eventRecyclerView.adapter = HomeAdapter(eventArrayList)
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
-
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        _binding = null
-//    }
-
-    override fun onClick(v: View, data: HomeModel) {
-        Toast.makeText(context,"Percobaan klik item "+ data.title, Toast.LENGTH_SHORT).show()
-    }
-
-
 
 }
+
+
