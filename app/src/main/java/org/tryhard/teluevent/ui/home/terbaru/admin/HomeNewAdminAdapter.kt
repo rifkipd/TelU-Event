@@ -1,8 +1,9 @@
-package org.tryhard.teluevent.ui.home.terbaru
+package org.tryhard.teluevent.ui.home.terbaru.admin
 
 
 import android.app.Activity
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,8 @@ import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.google.firebase.storage.FirebaseStorage
 import org.tryhard.teluevent.R
 import org.tryhard.teluevent.model.dummy.HomeVerticalModel
 import org.tryhard.teluevent.model.event.DAOEvent
@@ -22,8 +25,9 @@ class HomeNewAdminAdapter(private val eventList:ArrayList<Event>) :RecyclerView.
 
 
 
+    private var storageRef = FirebaseStorage.getInstance().reference
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeNewAdminAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_home_vertical_admin,parent,false)
 
@@ -32,7 +36,7 @@ class HomeNewAdminAdapter(private val eventList:ArrayList<Event>) :RecyclerView.
 
     }
 
-    override fun onBindViewHolder(holder: HomeNewAdminAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = eventList[position]
         val event = eventList[position]
 
@@ -40,6 +44,18 @@ class HomeNewAdminAdapter(private val eventList:ArrayList<Event>) :RecyclerView.
 
         holder.tvNewTitle.text = currentItem.title
         holder.tvLocationEvent.text = currentItem.place
+
+
+
+        storageRef.child("uploads/${currentItem.title}").downloadUrl.addOnSuccessListener {
+            Glide.with(holder.itemView)
+                .load(it)
+                .into(holder.foto)
+
+        }.addOnFailureListener{
+            Log.d("TAG",it.message.toString())
+        }
+
 
         holder.optionMenu.setOnClickListener {
 
@@ -109,6 +125,7 @@ class HomeNewAdminAdapter(private val eventList:ArrayList<Event>) :RecyclerView.
         val tvNewTitle: TextView = itemView.findViewById(R.id.tvNewTitle)
         val tvLocationEvent: TextView = itemView.findViewById(R.id.tvLocationEvent)
         val optionMenu : ImageView = itemView.findViewById(R.id.optionAdminBtn)
+        val foto: ImageView = itemView.findViewById(R.id.ivNewImg)
 
 
 

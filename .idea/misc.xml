@@ -3,13 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/drawable/shape.xml" value="0.2735" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/font/poppins.xml" value="0.2875" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_admin.xml" value="0.26354679802955666" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_auth.xml" value="0.26354679802955666" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_edit.xml" value="0.151171875" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_main.xml" value="0.1421193573068095" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_testing.xml" value="0.26354679802955666" />
-        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_add_event.xml" value="0.25" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_add_event.xml" value="0.3574074074074074" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_detail.xml" value="0.2641625615763547" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_home_admin.xml" value="0.18" />

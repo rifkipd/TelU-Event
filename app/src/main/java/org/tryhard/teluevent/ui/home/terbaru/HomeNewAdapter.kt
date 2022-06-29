@@ -3,6 +3,8 @@ package org.tryhard.teluevent.ui.home.terbaru
 
 import android.app.Activity
 import android.content.Intent
+import android.media.Image
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +13,8 @@ import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.google.firebase.storage.FirebaseStorage
 import org.tryhard.teluevent.R
 import org.tryhard.teluevent.model.dummy.HomeVerticalModel
 import org.tryhard.teluevent.model.event.DAOEvent
@@ -21,7 +25,7 @@ import org.tryhard.teluevent.ui.addevent.AddEventFragment
 class HomeNewAdapter(private val eventList:ArrayList<Event>) :RecyclerView.Adapter<HomeNewAdapter.ViewHolder>(){
 
 
-
+    private var storageRef = FirebaseStorage.getInstance().reference
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeNewAdapter.ViewHolder {
 
@@ -36,10 +40,18 @@ class HomeNewAdapter(private val eventList:ArrayList<Event>) :RecyclerView.Adapt
         val currentItem = eventList[position]
         val event = eventList[position]
 
+        storageRef.child("uploads/${currentItem.title}").downloadUrl.addOnSuccessListener {
+            Glide.with(holder.itemView)
+                .load(it)
+                .into(holder.foto)
 
+        }.addOnFailureListener{
+            Log.d("TAG",it.message.toString())
+        }
 
         holder.tvNewTitle.text = currentItem.title
         holder.tvLocationEvent.text = currentItem.place
+
 
 //        holder.optionMenu.setOnClickListener {
 //
@@ -108,6 +120,7 @@ class HomeNewAdapter(private val eventList:ArrayList<Event>) :RecyclerView.Adapt
 
         val tvNewTitle: TextView = itemView.findViewById(R.id.tvNewTitle)
         val tvLocationEvent: TextView = itemView.findViewById(R.id.tvLocationEvent)
+        val foto:ImageView = itemView.findViewById(R.id.ivNewImg)
 
 
 

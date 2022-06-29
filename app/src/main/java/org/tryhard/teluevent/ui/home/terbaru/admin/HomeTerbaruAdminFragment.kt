@@ -1,4 +1,4 @@
-package org.tryhard.teluevent.ui.home.terbaru
+package org.tryhard.teluevent.ui.home.terbaru.admin
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

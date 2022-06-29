@@ -1,12 +1,14 @@
-package org.tryhard.teluevent.ui.home
+package org.tryhard.teluevent.ui.home.admin
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.item_home_horizontal.view.*
+import com.google.firebase.storage.FirebaseStorage
 import org.tryhard.teluevent.R
 import org.tryhard.teluevent.model.dummy.HomeModel
 import org.tryhard.teluevent.model.event.Event
@@ -16,6 +18,7 @@ class HomeAdminAdapter(private val eventList:ArrayList<Event>) : RecyclerView.Ad
 
 
 
+    private var storageRef = FirebaseStorage.getInstance().reference
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_home_horizontal,parent,false)
@@ -25,7 +28,14 @@ class HomeAdminAdapter(private val eventList:ArrayList<Event>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = eventList[position]
+        storageRef.child("uploads/${currentItem.title}").downloadUrl.addOnSuccessListener {
+            Glide.with(holder.itemView)
+                .load(it)
+                .into(holder.foto)
 
+        }.addOnFailureListener{
+            Log.d("TAG",it.message.toString())
+        }
 
         holder.tvTitle.text = currentItem.title
     }
@@ -38,9 +48,26 @@ class HomeAdminAdapter(private val eventList:ArrayList<Event>) : RecyclerView.Ad
 
 
     class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+        val foto:ImageView = itemView.findViewById(R.id.ivBigBanner)
         val tvTitle: TextView = itemView.findViewById(R.id.tvBigTitle)
 
+
     }
+
+
+//    private fun getImage(data:String,foto:ImageView){
+//
+//
+//
+//
+//        storageRef.child(data).downloadUrl.addOnSuccessListener {
+//            Glide.with(Activity())
+//                .load(it)
+//                .into(foto)
+//        }.addOnFailureListener{
+//
+//        }
+//    }
 
     interface ItemAdapterCallback{
         fun onClick(v: View, data:HomeModel)

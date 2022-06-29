@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_homeAdmin"
-        android:name="org.tryhard.teluevent.ui.home.HomeAdminFragment"
+        android:name="org.tryhard.teluevent.ui.home.admin.HomeAdminFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home_admin" />
 

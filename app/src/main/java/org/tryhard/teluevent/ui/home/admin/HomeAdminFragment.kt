@@ -1,4 +1,4 @@
-package org.tryhard.teluevent.ui.home
+package org.tryhard.teluevent.ui.home.admin
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.getValue
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.tryhard.teluevent.R
 import org.tryhard.teluevent.model.event.Event
+import org.tryhard.teluevent.ui.home.SectionPagerAdminAdapter
 
 
 class HomeAdminFragment : Fragment() {
