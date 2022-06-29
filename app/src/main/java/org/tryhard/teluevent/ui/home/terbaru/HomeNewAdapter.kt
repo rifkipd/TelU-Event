@@ -1,22 +1,21 @@
 package org.tryhard.teluevent.ui.home.terbaru
 
 
-import android.content.Context
-import android.media.Image
+import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
-import androidx.annotation.NonNull
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import org.tryhard.teluevent.R
 import org.tryhard.teluevent.model.dummy.HomeVerticalModel
+import org.tryhard.teluevent.model.event.DAOEvent
 import org.tryhard.teluevent.model.event.Event
-import org.w3c.dom.Text
-import java.security.AccessControlContext
-import java.security.AccessController.getContext
+import org.tryhard.teluevent.ui.addevent.AddEventFragment
 
 
 class HomeNewAdapter(private val eventList:ArrayList<Event>) :RecyclerView.Adapter<HomeNewAdapter.ViewHolder>(){
@@ -35,19 +34,67 @@ class HomeNewAdapter(private val eventList:ArrayList<Event>) :RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: HomeNewAdapter.ViewHolder, position: Int) {
         val currentItem = eventList[position]
+        val event = eventList[position]
+
 
 
         holder.tvNewTitle.text = currentItem.title
         holder.tvLocationEvent.text = currentItem.place
 
-
-
-
-
+//        holder.optionMenu.setOnClickListener {
+//
+//            val context = it.context
+//
+//
+//            val popup = PopupMenu(it.context, holder.optionMenu)
+//            popup.inflate(R.menu.option_menu)
+//            popup.setOnMenuItemClickListener { item ->
+//                when(item.itemId){
+//                    R.id.menu_edit ->{
+//
+//                        val intent = Intent(it.context,AddEventFragment::class.java)
+//                        intent.putExtra("EDIT",event)
+//                        (context as Activity).startActivity(intent)
+//
+//                        true
+//                    }
+//                    R.id.menu_remove ->{
+//                        val key = currentItem.key.toString()
+//                        val dao = DAOEvent()
+//
+//                        if (key != null) {
+//                            dao.remove(key).addOnSuccessListener {
+//                                Toast.makeText(context,"Event has been removed",Toast.LENGTH_SHORT).show()
+//                                notifyItemRemoved(position)
+//
+//                            }.addOnFailureListener{
+//                                Toast.makeText(context,it.message,Toast.LENGTH_SHORT).show()
+//                            }
+//                        }
+//                        true
+//                    }
+//                    else -> false
+//                }
+//            }
+//
+//            popup.show()
+//
+//
+//        }
 
 
 
     }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -61,7 +108,9 @@ class HomeNewAdapter(private val eventList:ArrayList<Event>) :RecyclerView.Adapt
 
         val tvNewTitle: TextView = itemView.findViewById(R.id.tvNewTitle)
         val tvLocationEvent: TextView = itemView.findViewById(R.id.tvLocationEvent)
-        val optionMenu : TextView = itemView.findViewById<TextView>(R.id.txt_option)
+
+
+
 
 
 
@@ -85,7 +134,11 @@ class HomeNewAdapter(private val eventList:ArrayList<Event>) :RecyclerView.Adapt
 
 
 
+
+
     interface ItemAdapterCallback{
         fun onClick(v: View, data:HomeVerticalModel)
     }
 }
+
+

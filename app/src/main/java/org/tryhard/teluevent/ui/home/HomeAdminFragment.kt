@@ -15,7 +15,7 @@ import org.tryhard.teluevent.R
 import org.tryhard.teluevent.model.event.Event
 
 
-class HomeFragment : Fragment() {
+class HomeAdminFragment : Fragment() {
 
    private lateinit var dbRef: DatabaseReference
    private lateinit var eventRecyclerView: RecyclerView
@@ -32,7 +32,7 @@ class HomeFragment : Fragment() {
 
 
 
-        return inflater.inflate(R.layout.fragment_home,container,false)
+        return inflater.inflate(R.layout.fragment_home_admin,container,false)
 
     }
 
@@ -46,7 +46,7 @@ class HomeFragment : Fragment() {
         eventArrayList = arrayListOf<Event>()
         getEventData()
 
-        val sectionPagerAdapter = SectionPagerAdapter(
+        val sectionPagerAdapter = SectionPagerAdminAdapter(
             childFragmentManager
         )
         viewPager.adapter = sectionPagerAdapter
@@ -67,7 +67,7 @@ class HomeFragment : Fragment() {
 
                     }
 
-                    eventRecyclerView.adapter = HomeAdapter(eventArrayList)
+                    eventRecyclerView.adapter = HomeAdminAdapter(eventArrayList)
                 }
             }
 

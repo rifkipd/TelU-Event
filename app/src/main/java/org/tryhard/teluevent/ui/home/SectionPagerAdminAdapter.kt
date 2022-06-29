@@ -4,10 +4,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import org.tryhard.teluevent.ui.home.terbaru.HomeTerbaruAdminFragment
-import org.tryhard.teluevent.ui.home.terbaru.HomeTerbaruFragment
 import org.tryhard.teluevent.ui.home.upcoming.HomeUpcomingFragment
 
-class SectionPagerAdapter(fm:FragmentManager):FragmentPagerAdapter(fm) {
+class SectionPagerAdminAdapter(fm:FragmentManager):FragmentPagerAdapter(fm) {
     override fun getPageTitle(position: Int): CharSequence? {
         return when (position){
             0 -> "Terbaru"
@@ -24,7 +23,7 @@ class SectionPagerAdapter(fm:FragmentManager):FragmentPagerAdapter(fm) {
         var fragment : Fragment
         return when (position){
             0-> {
-                fragment = HomeTerbaruFragment()
+                fragment = HomeTerbaruAdminFragment()
                 return fragment
             }
             1-> {
@@ -32,7 +31,7 @@ class SectionPagerAdapter(fm:FragmentManager):FragmentPagerAdapter(fm) {
                 return fragment
             }
             else ->{
-                fragment = HomeTerbaruFragment()
+                fragment = HomeTerbaruAdminFragment()
                 return fragment
             }
         }

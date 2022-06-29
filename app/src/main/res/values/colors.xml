@@ -10,5 +10,8 @@
     <color name="grey">#939393</color>
     <color name="grey_200">#EEEEEE</color>
     <color name="red">#B80202</color>
+    <color name="primary_dark">#101320</color>
+    <color name="primary">#191E31</color>
+    <color name="accent">#F5D0CF</color>
 
 </resources>

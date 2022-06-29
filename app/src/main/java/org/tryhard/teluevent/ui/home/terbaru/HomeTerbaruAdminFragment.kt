@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
@@ -15,7 +16,7 @@ import org.tryhard.teluevent.databinding.FragmentHomeTerbaruBinding
 import org.tryhard.teluevent.model.event.Event
 
 
-class HomeTerbaruFragment : Fragment(){
+class HomeTerbaruAdminFragment : Fragment(){
 
     private lateinit var binding:FragmentHomeTerbaruBinding
     private lateinit var dbRef: DatabaseReference
@@ -56,13 +57,13 @@ class HomeTerbaruFragment : Fragment(){
                         eventArrayList.add(event!!)
                     }
 
-                    eventRecyclerView.adapter = HomeNewAdapter(eventArrayList)
+                    eventRecyclerView.adapter = HomeNewAdminAdapter(eventArrayList)
 
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Toast.makeText(context,"Gagal mengambil data ",Toast.LENGTH_SHORT).show()
             }
 
         })
