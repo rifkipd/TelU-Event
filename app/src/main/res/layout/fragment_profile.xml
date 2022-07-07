@@ -8,19 +8,38 @@
     android:orientation="vertical"
     android:background="@color/grey_200">
 
-        <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="#FFF">
+
+        <ImageView
+            android:id="@+id/logoutBtn"
+            android:layout_width="20dp"
+            android:layout_height="19dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/logout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="#FFF">
 
-            <ImageView
-                android:layout_marginTop="26dp"
-                android:src="@drawable/sample_photo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivProfileImage"
+                android:layout_marginTop="0dp"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"/>
             <TextView
+                android:id="@+id/tvProfileName"
                 android:layout_marginTop="10dp"
                 android:text="Testing"
                 android:textSize="20sp"
@@ -30,12 +49,22 @@
                 android:layout_height="wrap_content"/>
 
             <TextView
+                android:id="@+id/tvProfileEmail"
                 android:text="Testing@gmail.com"
                 android:textSize="18sp"
                 android:fontFamily="@font/poppins"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"/>
+
+            <ImageView
+                android:id="@+id/ivAddProfile"
+                android:layout_width="107dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_photo"
+                android:layout_marginBottom="50dp"
+                />
+
 
         </LinearLayout>
 
@@ -71,7 +100,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck" >
+
+        </androidx.viewpager.widget.ViewPager>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </LinearLayout>

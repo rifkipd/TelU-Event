@@ -19,62 +19,146 @@
             android:orientation="vertical"
             android:paddingHorizontal="10dp"
             android:layout_marginTop="8dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/calender_view_title"
-                android:text="Month"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:layout_marginBottom="10dp"
-                android:textColor="@color/black"/>
-            <com.github.sundeepk.compactcalendarview.CompactCalendarView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/calender_view"
-                android:layout_width="match_parent"
-                android:paddingHorizontal="10dp"
-                android:layout_height="300dp"
-                app:compactCalendarTargetHeight="250dp"
-                app:compactCalendarTextSize="12sp"
-                app:compactCalendarBackgroundColor="@color/white"
-                app:compactCalendarTextColor="@color/primary_dark"
-                app:compactCalendarCurrentSelectedDayBackgroundColor="#DF9F9E"
-                app:compactCalendarCurrentDayBackgroundColor="#EAE2E2"
-                app:compactCalendarMultiEventIndicatorColor="@color/accent"
-                app:compactCalendarEventIndicatorStyle="fill_large_indicator"
-                />
         </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="732dp"
             android:layout_gravity="bottom"
-            android:background="@drawable/event_bg"
-            >
+            android:background="@drawable/event_bg">
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewSchedule"
+                android:layout_width="350dp"
+                android:layout_height="130dp"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="80dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="350dp"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:id="@+id/tvTitleSchedule"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:fontFamily="@font/poppins"
+                            android:text="Event Music Pertama di TelkomUniversity"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.591"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/imageloc"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTitleSchedule"
+                            app:layout_constraintVertical_bias="0.0"
+                            app:srcCompat="@drawable/location_icon" />
+
+                        <ImageView
+
+                            android:id="@+id/imageView4"
+                            android:layout_width="17dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTitleSchedule"
+                            app:layout_constraintVertical_bias="0.941"
+                            app:srcCompat="@drawable/ic_icons8_clock_24" />
+
+                        <TextView
+
+                            android:id="@+id/tvLocSchedule"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:fontFamily="@font/poppins"
+                            android:text="TelkomUniverity"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.027"
+                            app:layout_constraintStart_toEndOf="@+id/imageloc"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTitleSchedule"
+                            app:layout_constraintVertical_bias="0.266" />
+
+                        <TextView
+
+                            android:id="@+id/tvDateSchedule"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/poppins"
+                            android:text="12 June 2022"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+                            app:layout_constraintHorizontal_bias="0.911"
+                            app:layout_constraintStart_toEndOf="@+id/tvLocSchedule"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTitleSchedule"
+                            app:layout_constraintVertical_bias="1.0" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/calender_events_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="16dp"
-                android:text="No registered events!"
-                android:textAlignment="center"
+                android:id="@+id/tvNoevent"
+                android:layout_width="258dp"
+                android:layout_height="83dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="89dp"
+                android:layout_marginTop="357dp"
+                android:layout_marginEnd="64dp"
+                android:text="No Events is Registered"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="20sp" />
 
-            <ListView
-                android:id="@+id/current_events"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_gravity="bottom"
-                android:layout_marginTop="60dp"
-                android:divider="@null"
-                android:dividerHeight="0dp"
-                android:paddingHorizontal="16dp"
-                android:paddingTop="4dp"
-                android:scrollbars="none" />
+
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

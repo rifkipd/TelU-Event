@@ -1,6 +1,8 @@
 package org.tryhard.teluevent.ui.home.terbaru.admin
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,9 +16,10 @@ import kotlinx.android.synthetic.main.fragment_home_terbaru_admin.*
 import org.tryhard.teluevent.R
 import org.tryhard.teluevent.databinding.FragmentHomeTerbaruBinding
 import org.tryhard.teluevent.model.event.Event
+import org.tryhard.teluevent.ui.detail.DetailActivity
 
 
-class HomeTerbaruAdminFragment : Fragment(){
+class HomeTerbaruAdminFragment : Fragment(),HomeNewAdminAdapter.ItemAdapterCallback{
 
     private lateinit var binding:FragmentHomeTerbaruBinding
     private lateinit var dbRef: DatabaseReference
@@ -57,7 +60,7 @@ class HomeTerbaruAdminFragment : Fragment(){
                         eventArrayList.add(event!!)
                     }
 
-                    eventRecyclerView.adapter = HomeNewAdminAdapter(eventArrayList)
+                    eventRecyclerView.adapter = HomeNewAdminAdapter(eventArrayList,this@HomeTerbaruAdminFragment)
 
                 }
             }
@@ -69,7 +72,15 @@ class HomeTerbaruAdminFragment : Fragment(){
         })
     }
 
-
+    override fun onClick(v: View, data: Event) {
+        val intent = Intent(context, DetailActivity::class.java)
+        intent.putExtra("title", data.title)
+        intent.putExtra("place", data.place)
+        intent.putExtra("date", data.date)
+        intent.putExtra("description", data.desc)
+        startActivity(intent)
+        Log.d("TAG","DATA HOME TO DETAIL ACT : $data")
+    }
 
 
 //    override fun onClick(v: View, data: HomeVerticalModel) {

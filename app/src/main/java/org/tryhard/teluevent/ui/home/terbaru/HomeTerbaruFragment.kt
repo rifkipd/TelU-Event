@@ -1,10 +1,13 @@
 package org.tryhard.teluevent.ui.home.terbaru
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
@@ -13,9 +16,10 @@ import kotlinx.android.synthetic.main.fragment_home_terbaru_admin.*
 import org.tryhard.teluevent.R
 import org.tryhard.teluevent.databinding.FragmentHomeTerbaruBinding
 import org.tryhard.teluevent.model.event.Event
+import org.tryhard.teluevent.ui.detail.DetailActivity
 
 
-class HomeTerbaruFragment : Fragment(){
+class HomeTerbaruFragment : Fragment(),HomeNewAdapter.ItemAdapterCallback{
 
     private lateinit var binding:FragmentHomeTerbaruBinding
     private lateinit var dbRef: DatabaseReference
@@ -56,16 +60,28 @@ class HomeTerbaruFragment : Fragment(){
                         eventArrayList.add(event!!)
                     }
 
-                    eventRecyclerView.adapter = HomeNewAdapter(eventArrayList)
+                    eventRecyclerView.adapter = HomeNewAdapter(eventArrayList,this@HomeTerbaruFragment)
 
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Toast.makeText(context,"$error", Toast.LENGTH_SHORT).show()
             }
 
         })
+    }
+
+    override fun onClick(v: View, data: Event) {
+
+        val intent = Intent(context, DetailActivity::class.java)
+        intent.putExtra("title", data.title)
+        intent.putExtra("place", data.place)
+        intent.putExtra("date", data.date)
+        intent.putExtra("description", data.desc)
+        startActivity(intent)
+        Log.d("TAG","DATA HOME TO DETAIL ACT : $data")
+
     }
 
 

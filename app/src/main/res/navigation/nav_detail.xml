@@ -2,13 +2,24 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/fragmentDetail"
-    android:id="@+id/nav_detail">
+    android:id="@+id/nav_detail"
+    app:startDestination="@id/fragmentDetail">
 
-
-    <fragment android:id="@+id/fragmentDetail"
+    <fragment
+        android:id="@+id/fragmentDetail"
         android:name="org.tryhard.teluevent.ui.detail.DetailFragment"
-        tools:layout = "@layout/fragment_detail"
-        />
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+
+
+        <argument
+            android:name="data"
+            app:argType="org.tryhard.teluevent.model.event.Event"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+
+
 
 </navigation>

@@ -3,31 +3,44 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.209" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/drawable/shape.xml" value="0.2735" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/font/poppins.xml" value="0.2875" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_admin.xml" value="0.26354679802955666" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_apply_event.xml" value="0.26200738916256155" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_auth.xml" value="0.26354679802955666" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_detail.xml" value="0.2" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_edit.xml" value="0.151171875" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_main.xml" value="0.1421193573068095" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_register_event.xml" value="0.26200738916256155" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/activity_testing.xml" value="0.26354679802955666" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_add_event.xml" value="0.3574074074074074" />
-        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_detail.xml" value="0.2641625615763547" />
-        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_blank.xml" value="0.18318965517241378" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_detail.xml" value="0.25" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_event_detail.xml" value="0.151953125" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_home_admin.xml" value="0.18" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_home_terbaru.xml" value="0.2" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_home_terbaru_admin.xml" value="0.33" />
-        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_profile.xml" value="0.2641625615763547" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_profile.xml" value="0.67" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_profile_account.xml" value="0.2641625615763547" />
-        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_schedule.xml" value="0.22" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_schedule.xml" value="0.25" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_schedulee.xml" value="0.27616995073891626" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_sign_in.xml" value="0.2641625615763547" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_sign_up.xml" value="0.25" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/fragment_update_profile.xml" value="0.27616995073891626" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/item_home_horizontal.xml" value="0.25" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/item_home_vertical.xml" value="0.33" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/item_home_vertical_admin.xml" value="0.26447044334975367" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/item_menu_profile.xml" value="0.2641625615763547" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/item_schedule.xml" value="0.15078125" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/layout/item_schedulel.xml" value="0.27616995073891626" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/menu/bottom_nav_menu.xml" value="0.290234375" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/menu/bottom_nav_menu_admin.xml" value="0.290234375" />
         <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/menu/option_menu.xml" value="0.290234375" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/menu/option_menu_save.xml" value="0.289453125" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2965" />
+        <entry key="..\:/Android Studio Project/TeluEvent/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.209" />
       </map>
     </option>
   </component>

@@ -179,9 +179,9 @@ class AddEventFragment : Fragment() {
             if(imageTitle.isBlank() || imageTitle.isEmpty()){
                 binding.inputTextTitle.error = "*Required"
             }else{
-                binding.progressBarLoadingIndicator.isIndeterminate = false
-                binding.progressBarLoadingIndicator.visibility = View.VISIBLE
-                binding.textViewIndicatorLoading.visibility = View.VISIBLE
+//                binding.progressBarLoadingIndicator.isIndeterminate = false
+//                binding.progressBarLoadingIndicator.visibility = View.VISIBLE
+//                binding.textViewIndicatorLoading.visibility = View.VISIBLE
                 binding.inputTextTitle.error = null
                 uploadImage(imageTitle)
             }
@@ -212,10 +212,10 @@ class AddEventFragment : Fragment() {
             imageUri?.let { uri ->
                 storageReference.child(title).putFile(uri)
                     .addOnProgressListener {
-                        val progress: Int = ((100 * it.bytesTransferred)/ it.totalByteCount).toInt()
-                        binding.progressBarLoadingIndicator.progress = progress
-                        val indicatorText = "Loading..$progress%"
-                        binding.textViewIndicatorLoading.text = indicatorText
+//                        val progress: Int = ((100 * it.bytesTransferred)/ it.totalByteCount).toInt()
+//                        binding.progressBarLoadingIndicator.progress = progress
+//                        val indicatorText = "Loading..$progress%"
+//                        binding.textViewIndicatorLoading.text = indicatorText
                     }.await()
                 withContext(Dispatchers.Main){
                     Toast.makeText(context,"Success Upload",Toast.LENGTH_SHORT).show()

@@ -8,56 +8,65 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.item_home_horizontal.view.*
 import org.tryhard.teluevent.R
+import org.tryhard.teluevent.api.EventClickHandler
 import org.tryhard.teluevent.model.dummy.HomeModel
+import org.tryhard.teluevent.model.dummy.ProfileMenuModel
 import org.tryhard.teluevent.model.event.Event
+import org.tryhard.teluevent.ui.home.terbaru.HomeNewAdapter
+import org.tryhard.teluevent.ui.profile.ProfileMenuAdapter
 
 
-class HomeAdapter(private val eventList:ArrayList<Event>) : RecyclerView.Adapter<HomeAdapter.MyViewHolder>(){
+
+class HomeAdapter(
+    private val listData: List<Event>,
+    private val itemAdapterCallback: ItemAdapterCallback,
+) :RecyclerView.Adapter<HomeAdapter.ViewHolder>(){
 
 
-    private var storageRef = FirebaseStorage.getInstance().reference
 
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_home_horizontal,parent,false)
-
-        return MyViewHolder(itemView)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeAdapter.ViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val view = layoutInflater.inflate(R.layout.item_home_horizontal,parent,false)
+        return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentItem = eventList[position]
-
-        storageRef.child("uploads/${currentItem.title}").downloadUrl.addOnSuccessListener {
-            Glide.with(holder.itemView)
-                .load(it)
-                .into(holder.foto)
-
-        }.addOnFailureListener{
-            Log.d("TAG",it.message.toString())
-        }
-
-
-        holder.tvTitle.text = currentItem.title
+    override fun onBindViewHolder(holder: HomeAdapter.ViewHolder, position: Int) {
+        holder.bind(listData[position], itemAdapterCallback)
     }
+
+
 
     override fun getItemCount(): Int {
         val limit:Int = 5
-        return eventList.size.coerceAtMost(limit)
+        return listData.size.coerceAtMost(limit)
     }
 
+    class ViewHolder(itemView:View): RecyclerView.ViewHolder(itemView) {
+        fun bind(data:Event,itemAdapterCallback: ItemAdapterCallback){
+            val storageRef = FirebaseStorage.getInstance().reference
 
+            itemView.apply {
+                tvBigTitle.text = data.title
+                storageRef.child("uploads/${data.title}").downloadUrl.addOnSuccessListener {
+                    Glide.with(itemView)
+                        .load(it)
+                        .into(ivBigBanner)
 
-    class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-        val tvTitle: TextView = itemView.findViewById(R.id.tvBigTitle)
-        val foto: ImageView = itemView.findViewById(R.id.ivBigBanner)
-
+                }.addOnFailureListener{
+                    Log.d("TAG",it.message.toString())
+                }
+                itemView.setOnClickListener{itemAdapterCallback.onClick(it,data)}
+            }
+        }
     }
 
     interface ItemAdapterCallback{
-        fun onClick(v: View, data:HomeModel)
+        fun onClick(v: View, data:Event)
     }
 }
+
+

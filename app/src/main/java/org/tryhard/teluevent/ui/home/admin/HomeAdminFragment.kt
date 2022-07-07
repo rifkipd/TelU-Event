@@ -1,6 +1,8 @@
 package org.tryhard.teluevent.ui.home.admin
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,10 +14,11 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.tryhard.teluevent.R
 import org.tryhard.teluevent.model.event.Event
+import org.tryhard.teluevent.ui.detail.DetailActivity
 import org.tryhard.teluevent.ui.home.SectionPagerAdminAdapter
 
 
-class HomeAdminFragment : Fragment() {
+class HomeAdminFragment : Fragment(),HomeAdminAdapter.ItemAdapterCallback {
 
    private lateinit var dbRef: DatabaseReference
    private lateinit var eventRecyclerView: RecyclerView
@@ -67,7 +70,7 @@ class HomeAdminFragment : Fragment() {
 
                     }
 
-                    eventRecyclerView.adapter = HomeAdminAdapter(eventArrayList)
+                    eventRecyclerView.adapter = HomeAdminAdapter(eventArrayList,this@HomeAdminFragment)
                 }
             }
 
@@ -76,6 +79,19 @@ class HomeAdminFragment : Fragment() {
             }
 
         })
+    }
+
+
+    override fun onClick(v: View, data: Event) {
+
+        val intent = Intent(context, DetailActivity::class.java)
+        intent.putExtra("title", data.title)
+        intent.putExtra("place", data.place)
+        intent.putExtra("date", data.date)
+        intent.putExtra("description", data.desc)
+        startActivity(intent)
+        Log.d("TAG","DATA HOME TO DETAIL ACT : $data")
+
     }
 
 }
