@@ -3,8 +3,6 @@ package org.tryhard.teluevent.ui.profile
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import org.tryhard.teluevent.ui.home.terbaru.HomeTerbaruFragment
-import org.tryhard.teluevent.ui.home.upcoming.HomeUpcomingFragment
 import org.tryhard.teluevent.ui.profile.about.AboutFragment
 import org.tryhard.teluevent.ui.profile.account.ProfileAccountFragment
 

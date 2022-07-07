@@ -24,13 +24,13 @@ class AdminActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.navView
 
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main_admin) as NavHostFragment
         val navController = navHostFragment.navController
         NavigationUI.setupWithNavController(navView,navController)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.navigation_home, R.id.navigation_schedule , R.id.navigation_profile,R.id.navigation_addEvent))
+            R.id.navigation_homeAdmin, R.id.navigation_schedule , R.id.navigation_profile,R.id.navigation_addEvent))
 //        setupActionBarWithNavController(navController, appBarConfiguration)
 //        navView.setupWithNavController(navController)
 

@@ -2,30 +2,24 @@ package org.tryhard.teluevent.ui.home.terbaru
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
-import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home_terbaru.*
+import kotlinx.android.synthetic.main.fragment_home_terbaru_admin.*
 import org.tryhard.teluevent.R
 import org.tryhard.teluevent.databinding.FragmentHomeTerbaruBinding
-import org.tryhard.teluevent.model.dummy.HomeModel
-import org.tryhard.teluevent.model.dummy.HomeVerticalModel
 import org.tryhard.teluevent.model.event.Event
-import org.tryhard.teluevent.ui.addevent.AddEventFragment
 import org.tryhard.teluevent.ui.detail.DetailActivity
-import org.tryhard.teluevent.ui.home.HomeAdapter
-import org.tryhard.teluevent.ui.home.SectionPagerAdapter
 
 
-class HomeTerbaruFragment : Fragment(){
+class HomeTerbaruFragment : Fragment(),HomeNewAdapter.ItemAdapterCallback{
 
     private lateinit var binding:FragmentHomeTerbaruBinding
     private lateinit var dbRef: DatabaseReference
@@ -37,14 +31,14 @@ class HomeTerbaruFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_terbaru, container, false)
+        return inflater.inflate(R.layout.fragment_home_terbaru_admin, container, false)
     }
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        eventRecyclerView = terbaruRcList
+        eventRecyclerView = terbaruAdminRcList
         eventRecyclerView.layoutManager = LinearLayoutManager(activity)
         eventRecyclerView.setHasFixedSize(true)
 
@@ -62,18 +56,32 @@ class HomeTerbaruFragment : Fragment(){
                 if(snapshot.exists()){
                     for (eventSnapshot in snapshot.children){
                         val event = eventSnapshot.getValue(Event::class.java)
+                        event?.key = eventSnapshot.key
                         eventArrayList.add(event!!)
                     }
 
-                    eventRecyclerView.adapter = HomeNewAdapter(eventArrayList)
+                    eventRecyclerView.adapter = HomeNewAdapter(eventArrayList,this@HomeTerbaruFragment)
+
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Toast.makeText(context,"$error", Toast.LENGTH_SHORT).show()
             }
 
         })
+    }
+
+    override fun onClick(v: View, data: Event) {
+
+        val intent = Intent(context, DetailActivity::class.java)
+        intent.putExtra("title", data.title)
+        intent.putExtra("place", data.place)
+        intent.putExtra("date", data.date)
+        intent.putExtra("description", data.desc)
+        startActivity(intent)
+        Log.d("TAG","DATA HOME TO DETAIL ACT : $data")
+
     }
 
 
@@ -95,6 +103,8 @@ class HomeTerbaruFragment : Fragment(){
 //        eventList.add(HomeVerticalModel("Event Pertemuan Mahasiswa",""))
 //        eventList.add(HomeVerticalModel("Informasi Kelulusan",""))
 //    }
+
+
 
 }
 

@@ -1,11 +1,15 @@
 package org.tryhard.teluevent.ui.profile.account
 
+
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_profile_account.*
@@ -46,7 +50,14 @@ class ProfileAccountFragment : Fragment(),ProfileMenuAdapter.ItemAdapterCallback
     }
 
     override fun onClick(v: View, data: ProfileMenuModel) {
-        Toast.makeText(context,"Menu Click "+data.title,Toast.LENGTH_SHORT).show()
+        if(data.title == "Edit Profile"){
+
+//            val intent =  Intent(context,UpdateProfileFragment::class.java)
+//            startActivity(intent)
+        }else{
+            Toast.makeText(context,"${data.title} belum berfungsi",Toast.LENGTH_SHORT).show()
+        }
+
     }
 
 

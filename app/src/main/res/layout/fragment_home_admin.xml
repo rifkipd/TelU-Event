@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF">
+
+
+        <ImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="28dp"
+            android:src="@drawable/default_profile"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/teluevent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bigRcList"
+        android:layout_width="match_parent"
+        android:layout_height="222dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey_200"
+        tools:listitem="@layout/item_home_horizontal" >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+   <androidx.coordinatorlayout.widget.CoordinatorLayout
+       android:background="#FFF"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="24dp">
+
+       <com.google.android.material.appbar.AppBarLayout
+           android:background="#FFF"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <com.google.android.material.tabs.TabLayout
+               android:id="@+id/tabLayout"
+               android:background="#FFF"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:tabIndicatorFullWidth="false"
+               app:tabSelectedTextColor="#020202"
+               app:tabIndicatorColor="#020202">
+
+           </com.google.android.material.tabs.TabLayout>
+
+       </com.google.android.material.appbar.AppBarLayout>
+
+
+       <androidx.viewpager.widget.ViewPager
+           android:id="@+id/viewPager"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+       </androidx.viewpager.widget.ViewPager>
+
+   </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</LinearLayout>

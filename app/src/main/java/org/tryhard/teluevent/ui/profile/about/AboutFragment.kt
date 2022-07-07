@@ -1,5 +1,6 @@
 package org.tryhard.teluevent.ui.profile.about
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import kotlinx.android.synthetic.main.fragment_profile_account.*
 import org.tryhard.teluevent.R
 import org.tryhard.teluevent.model.dummy.ProfileMenuModel
 import org.tryhard.teluevent.ui.profile.ProfileMenuAdapter
+import org.tryhard.teluevent.ui.profile.about.create.ApplyEventActivity
 
 
 class AboutFragment : Fragment(),ProfileMenuAdapter.ItemAdapterCallback {
@@ -47,6 +49,15 @@ class AboutFragment : Fragment(),ProfileMenuAdapter.ItemAdapterCallback {
     }
 
     override fun onClick(v: View, data: ProfileMenuModel) {
-        Toast.makeText(context,"About menu "+data.title+" clicked",Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context,"About menu "+data.title+" clicked",Toast.LENGTH_SHORT).show()
+
+        if(data.title == "How To Apply Event"){
+            val intent  = Intent(context, ApplyEventActivity::class.java)
+            startActivity(intent)
+        }else{
+            Toast.makeText(context,"${data.title} clicked",Toast.LENGTH_SHORT).show()
+        }
+
+
     }
 }
